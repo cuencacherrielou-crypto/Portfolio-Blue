@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Cherrie Lou Cuenca — Full-Stack Developer & UI Enthusiast. A creative developer portfolio showcasing 3D, design, and code." />
+  <title>Cherrie Lou Cuenca — Full-Stack Developer & UI Enthusiast</title>
+
+  <!-- Google Fonts: Syne (display) + Manrope (body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@500;600;700;800&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Page loader -->
+  <div class="loader" id="loader">
+    <div class="loader-content">
+      <div class="loader-ring"></div>
+      <p class="loader-text">Loading portfolio</p>
+    </div>
+  </div>
+
+  <!-- Custom cursor -->
+  <div class="cursor-dot" id="cursorDot"></div>
+  <div class="cursor-ring" id="cursorRing"></div>
+
+  <!-- Decorative background layers -->
+  <div class="bg-grain"></div>
+  <div class="bg-glow bg-glow-1"></div>
+  <div class="bg-glow bg-glow-2"></div>
+
+  <!-- Decorative dots pattern (top-left) -->
+  <svg class="deco-dots" viewBox="0 0 200 120" aria-hidden="true">
+    <g fill="currentColor">
+      <!-- generated dot grid -->
+      <circle cx="10" cy="10" r="2"/><circle cx="30" cy="10" r="2"/><circle cx="50" cy="10" r="2"/><circle cx="70" cy="10" r="2"/><circle cx="90" cy="10" r="2"/><circle cx="110" cy="10" r="2"/><circle cx="130" cy="10" r="2"/><circle cx="150" cy="10" r="2"/>
+      <circle cx="10" cy="30" r="2"/><circle cx="30" cy="30" r="2"/><circle cx="50" cy="30" r="2"/><circle cx="70" cy="30" r="2"/><circle cx="90" cy="30" r="2"/><circle cx="110" cy="30" r="2"/><circle cx="130" cy="30" r="2"/><circle cx="150" cy="30" r="2"/>
+      <circle cx="10" cy="50" r="2"/><circle cx="30" cy="50" r="2"/><circle cx="50" cy="50" r="2"/><circle cx="70" cy="50" r="2"/><circle cx="90" cy="50" r="2"/><circle cx="110" cy="50" r="2"/><circle cx="130" cy="50" r="2"/><circle cx="150" cy="50" r="2"/>
+      <circle cx="10" cy="70" r="2"/><circle cx="30" cy="70" r="2"/><circle cx="50" cy="70" r="2"/><circle cx="70" cy="70" r="2"/><circle cx="90" cy="70" r="2"/><circle cx="110" cy="70" r="2"/><circle cx="130" cy="70" r="2"/><circle cx="150" cy="70" r="2"/>
+      <circle cx="10" cy="90" r="2"/><circle cx="30" cy="90" r="2"/><circle cx="50" cy="90" r="2"/><circle cx="70" cy="90" r="2"/><circle cx="90" cy="90" r="2"/><circle cx="110" cy="90" r="2"/>
+    </g>
+  </svg>
+
+  <!-- Decorative concentric circles (bottom-right, animated) -->
+  <svg class="deco-circles" viewBox="0 0 400 400" aria-hidden="true">
+    <g fill="none" stroke="currentColor" stroke-width="1">
+      <circle cx="200" cy="200" r="80"/>
+      <circle cx="200" cy="200" r="130"/>
+      <circle cx="200" cy="200" r="180"/>
+      <circle cx="200" cy="200" r="230"/>
+    </g>
+  </svg>
+
+  <!-- ============ NAVIGATION ============ -->
+  <header class="nav-wrap">
+    <nav class="nav" aria-label="Main">
+      <a href="#home" class="nav-logo">
+        <span class="logo-mark">CC</span>
+      </a>
+
+      <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+
+      <ul class="nav-list" id="navList">
+        <li><a href="#home" class="nav-link active" data-section="home">Home</a></li>
+        <li><a href="#about" class="nav-link" data-section="about">About Me</a></li>
+        <li><a href="#projects" class="nav-link" data-section="projects">Projects</a></li>
+        <li><a href="#skills" class="nav-link" data-section="skills">Skills</a></li>
+        <li><a href="#contact" class="nav-link" data-section="contact">Contact Me</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- ============ HERO / HOME ============ -->
+  <section id="home" class="hero">
+    <div class="container hero-grid">
+      <div class="hero-content glass reveal">
+        <p class="eyebrow">Portfolio · 2026</p>
+        <h1 class="hero-title">
+          <span class="type-target" data-words="Full-Stack Developer,UI Enthusiast,Creative Developer,Visual Storyteller">Full-Stack Developer</span>
+          <span class="amp">&</span>
+          <span class="hero-line-2">UI Enthusiast</span>
+        </h1>
+        <p class="hero-sub">I bridge the gap between complex logic and elegant design.</p>
+        <div class="hero-cta">
+          <a href="#projects" class="btn btn-primary">
+            <span>View Projects</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <a href="#contact" class="btn btn-ghost">Let's Talk</a>
+        </div>
+      </div>
+
+      <div class="hero-portrait">
+        <div class="portrait-rings">
+          <span></span><span></span><span></span>
+        </div>
+        <img src="assets/profile-cutout.png" alt="Portrait of Cherrie Lou Cuenca" class="portrait" />
+        <div class="floating-badge badge-1"><span>3D</span></div>
+        <div class="floating-badge badge-2"><span>UI/UX</span></div>
+        <div class="floating-badge badge-3"><span>Code</span></div>
+      </div>
+    </div>
+
+    <div class="scroll-hint">
+      <span>Scroll</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- ============ ABOUT ============ -->
+  <section id="about" class="section about">
+    <div class="container">
+      <div class="section-head reveal">
+        <p class="eyebrow">01 — About Me</p>
+        <h2 class="section-title">Cherrie Lou Cuenca</h2>
+        <div class="divider"></div>
+        <p class="section-subtitle">Cherrie Lou Cuenca · BSIT Student, STI College Lipa</p>
+      </div>
+
+      <div class="about-grid">
+        <div class="about-photo reveal">
+          <img src="assets/profile-cutout.png" alt="Cherrie Lou Cuenca" />
+        </div>
+
+        <div class="about-text reveal">
+          <p>I am a <strong>22-year-old Creative Developer and UI Enthusiast</strong>, currently navigating the intersection of technology and art. My work is defined by a commitment to bridging the gap between technical logic and human-centered design, ensuring digital products are both robust and beautiful.</p>
+          <p>Currently, I am pursuing my <strong>Bachelor of Science in Information Technology (BSIT)</strong> at STI College Lipa (2023–Present). Based in the Philippines, I am dedicated to mastering modern frameworks and design principles to create impactful digital solutions.</p>
+
+          <div class="pillars">
+            <div class="pillar">
+              <div class="pillar-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 17l-5-5 5-5M15 7l5 5-5 5"/></svg>
+              </div>
+              <h3>Functional Logic</h3>
+              <p>I architect clean, efficient systems in VS Code, ensuring that the backend is as robust as the frontend is beautiful.</p>
+            </div>
+            <div class="pillar">
+              <div class="pillar-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="9"/><path d="M12 3v18M3 12h18"/></svg>
+              </div>
+              <h3>Immersive Design</h3>
+              <p>Using Canva and Blender to craft high-fidelity interfaces and 3D assets that prioritize accessibility and user delight.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Stats counter -->
+      <div class="stats reveal">
+        <div class="stat">
+          <span class="stat-num" data-target="4">0</span>
+          <span class="stat-label">Disciplines</span>
+        </div>
+        <div class="stat">
+          <span class="stat-num" data-target="13">0</span>
+          <span class="stat-label">Years Learning</span>
+        </div>
+        <div class="stat">
+          <span class="stat-num" data-target="9">0</span>
+          <span class="stat-label">Projects Featured</span>
+        </div>
+        <div class="stat">
+          <span class="stat-num" data-target="100" data-suffix="%">0</span>
+          <span class="stat-label">Curiosity</span>
+        </div>
+      </div>
+
+      <!-- Work Experience -->
+      <div class="sub-section reveal">
+        <h3 class="sub-title">Work Experience</h3>
+        <div class="divider divider-sm"></div>
+
+        <div class="glass dev-card work-card">
+          <div class="work-head">
+            <div>
+              <h4>Virtual Assistant</h4>
+              <span class="muted">Private Sourcing Agency</span>
+            </div>
+            <span class="date work-date">Nov 2024 — Present</span>
+          </div>
+          <ul class="dev-list bullet">
+            <li>Create content for the agency's social media and job postings.</li>
+            <li>Edit and design visual content — graphics, layouts, and hiring materials.</li>
+            <li>Reply to inquiries from applicants and clients promptly and professionally.</li>
+            <li>Guide and support applicants through the hiring process to help them land a job.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Educational Background -->
+      <div class="sub-section reveal">
+        <h3 class="sub-title">Educational Background</h3>
+        <div class="divider divider-sm"></div>
+
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <span class="timeline-date">2023 — Present</span>
+            <h4>Tertiary Level</h4>
+            <p>STI College Lipa — Pursuing a Bachelor of Science in Information Technology</p>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <span class="timeline-date">2017 — 2023</span>
+            <h4>High School</h4>
+            <p>Bulacnin Integrated National Highschool — Completed Secondary Education</p>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <span class="timeline-date">2012 — 2017</span>
+            <h4>Elementary</h4>
+            <p>Bulacnin Elementary School</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Professional Development -->
+      <div class="sub-section reveal">
+        <h3 class="sub-title">Professional Development</h3>
+        <div class="divider divider-sm"></div>
+
+        <div class="dev-grid">
+          <div class="glass dev-card">
+            <h4>Specialized Seminars <span class="muted">(The "Deep Dives")</span></h4>
+            <ul class="dev-list">
+              <li>
+                <em>Inside the Hacker's Mind <span class="date">(Nov 2025)</span></em>
+                <span>Focus: Ethical Hacking, cyber threat defense, and security mindset.</span>
+              </li>
+              <li>
+                <em>IoT Applications & Development <span class="date">(Nov 2025)</span></em>
+                <span>Focus: Smart system integration and hardware-software communication.</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="glass dev-card">
+            <h4>Technical Milestones <span class="muted">(The "Certifications")</span></h4>
+            <ul class="dev-list bullet">
+              <li>Intro to SAP S/4HANA using Global Bike – Part II <span class="date">(Dec 2025)</span></li>
+              <li>IoT Applications and Machine Learning <span class="date">(Nov 2025)</span></li>
+              <li>Ethical Hacking and Defending Against Evolving Threats <span class="date">(Nov 2025)</span></li>
+              <li>Building A Connected Tomorrow – IoT Innovations and Beyond <span class="date">(Apr 2025)</span></li>
+              <li>Java Programming | Intermediate <span class="date">(Aug 2023)</span></li>
+              <li>SQL & Database Management | Intermediate <span class="date">(Jan 2024)</span></li>
+              <li>SAP S/4 HANA | Fundamentals <span class="date">(Jan 2024)</span></li>
+              <li>Python & Web Tech | Foundational <span class="date">(2024–2026)</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PROJECTS ============ -->
+  <section id="projects" class="section projects">
+    <div class="container">
+      <div class="section-head reveal">
+        <p class="eyebrow">02 — Projects</p>
+        <h2 class="section-title">Projects</h2>
+        <div class="divider"></div>
+        <p class="section-subtitle">A curation of digital solutions where technical logic meets creative immersion. This module explores the transition from abstract concepts to functional reality through a multidisciplinary lens — spanning from high-fidelity UI prototypes to spatial 3D environments.</p>
+      </div>
+
+      <!-- Filter buttons -->
+      <div class="filter-bar reveal">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="3d">3D / Blender</button>
+        <button class="filter-btn" data-filter="graphics">Graphics</button>
+        <button class="filter-btn" data-filter="code">Code</button>
+        <button class="filter-btn" data-filter="ui">UI / Prototypes</button>
+      </div>
+
+      <!-- Project grid -->
+      <div class="project-grid" id="projectGrid">
+        <article class="project-card glass" data-category="3d">
+          <div class="project-media">
+            <img src="assets/blender-room.png" alt="Blender room render" />
+          </div>
+          <div class="project-body">
+            <span class="tag">3D · Blender</span>
+            <h3>Digital Craftsmanship</h3>
+            <p>Leveraging Blender to visualize concepts in three dimensions — isometric environments, procedural lighting, and high-quality rendering.</p>
+          </div>
+        </article>
+
+        <article class="project-card glass" data-category="3d">
+          <div class="project-media">
+            <img src="assets/blender-lamp.jpg" alt="Blender lamp wireframe" />
+          </div>
+          <div class="project-body">
+            <span class="tag">3D · Modeling</span>
+            <h3>Hard-Surface Lantern</h3>
+            <p>Wireframe-to-render workflow exploring topology, surface detail, and clean mesh construction in Blender.</p>
+          </div>
+        </article>
+
+        <article class="project-card glass" data-category="graphics">
+          <div class="project-media">
+            <img src="assets/gimp-tux.jpg" alt="GIMP vector illustration of Tux" />
+          </div>
+          <div class="project-body">
+            <span class="tag">GIMP · Vector</span>
+            <h3>Digital Graphics Mastery</h3>
+            <p>Utilizing GIMP and Inkscape to craft high-impact visual assets — precise color correction, complex masking, and creative compositing.</p>
+          </div>
+        </article>
+
+        <article class="project-card glass" data-category="graphics">
+          <div class="project-media">
+            <img src="assets/gimp-portrait.jpg" alt="Vector portrait edit" />
+          </div>
+          <div class="project-body">
+            <span class="tag">Inkscape · Tracing</span>
+            <h3>Vector Portrait Study</h3>
+            <p>Bitmap-to-vector tracing for storytelling — exploring auto-trace settings, speckle reduction, and corner smoothing.</p>
+          </div>
+        </article>
+
+        <article class="project-card glass" data-category="code">
+          <div class="project-media">
+            <img src="assets/tech-registration.jpg" alt="Java registration form" />
+          </div>
+          <div class="project-body">
+            <span class="tag">Java · WinForms</span>
+            <h3>Student Registration System</h3>
+            <p>Architecting the brain of the digital product — backend logic with form validation, confirmation flows, and structured data capture.</p>
+          </div>
+        </article>
+
+        <article class="project-card glass" data-category="code">
+          <div class="project-media">
+            <img src="assets/tech-cafe.jpg" alt="Cherrie Cloud Café POS" />
+          </div>
+          <div class="project-body">
+            <span class="tag">C# · SQL</span>
+            <h3>Cherrie Cloud Café POS</h3>
+            <p>Point-of-sale interface with order management and database persistence — CRUD operations with a friendly themed UI.</p>
+          </div>
+        </article>
+
+        <article class="project-card glass" data-category="ui">
+          <div class="project-media">
+            <img src="assets/ui-candy-menu.png" alt="Sugary Jelly Candy menu" />
+          </div>
+          <div class="project-body">
+            <span class="tag">UI · Canva</span>
+            <h3>Sugary Jelly Candy</h3>
+            <p>High-fidelity menu and brand identity — visual hierarchies, vibrant typography, and modern storytelling aesthetics.</p>
+          </div>
+        </article>
+
+        <article class="project-card glass" data-category="ui">
+          <div class="project-media">
+            <img src="assets/ui-monday.jpg" alt="One more Monday calendar design" />
+          </div>
+          <div class="project-body">
+            <span class="tag">UI · Social</span>
+            <h3>One More Monday</h3>
+            <p>Editorial-style social media composition combining 3D mockup elements with bold motivational copy.</p>
+          </div>
+        </article>
+
+        <article class="project-card glass" data-category="ui">
+          <div class="project-media">
+            <img src="assets/ui-candy-corner.png" alt="The Candy Corner design" />
+          </div>
+          <div class="project-body">
+            <span class="tag">UI · Branding</span>
+            <h3>The Candy Corner</h3>
+            <p>Retro-inspired packaging concept with checkered patterns, character illustration, and confectionery-themed branding.</p>
+          </div>
+        </article>
+
+        <article class="project-card glass" data-category="ui">
+          <div class="project-media">
+            <img src="assets/ui-hiring.jpg" alt="Accenture hiring social media post" />
+          </div>
+          <div class="project-body">
+            <span class="tag">UI · Social</span>
+            <h3>Recruitment Campaign</h3>
+            <p>A clean, conversion-focused hiring announcement — clear visual hierarchy, scannable requirements, and a bold call-to-action layout.</p>
+          </div>
+        </article>
+
+        <article class="project-card glass" data-category="ui">
+          <div class="project-media">
+            <img src="assets/new%20layout%201.jpg" alt="We Are Hiring — Health Operations Associate post" />
+          </div>
+          <div class="project-body">
+            <span class="tag">UI · Social</span>
+            <h3>Health Ops Hiring Post</h3>
+            <p>Bold vertical typography paired with a clean qualifications list — a recruitment post built for quick scanning and a clear call to apply.</p>
+          </div>
+        </article>
+
+        <article class="project-card glass" data-category="ui">
+          <div class="project-media">
+            <img src="assets/new%20layout%202.jpg" alt="Accenture referral hiring process journey map" />
+          </div>
+          <div class="project-body">
+            <span class="tag">UI · Infographic</span>
+            <h3>Referral Journey Map</h3>
+            <p>A ten-step hiring roadmap visualized as a connected path — numbered milestones guide referrals from application to Day 1.</p>
+          </div>
+        </article>
+
+        <article class="project-card glass" data-category="ui">
+          <div class="project-media">
+            <img src="assets/new%20layout%203.jpg" alt="Accenture is hiring referral quote card" />
+          </div>
+          <div class="project-body">
+            <span class="tag">UI · Social</span>
+            <h3>Your Next Chapter</h3>
+            <p>Glassmorphism quote card on a deep violet gradient — an encouraging, minimal message that puts the copy front and center.</p>
+          </div>
+        </article>
+
+        <article class="project-card glass" data-category="ui">
+          <div class="project-media">
+            <img src="assets/new%20layout%204.jpg" alt="It's about the right role — Monday hiring post" />
+          </div>
+          <div class="project-body">
+            <span class="tag">UI · Social</span>
+            <h3>It's About the Right</h3>
+            <p>Light, airy layout with icon-led benefit rows and a strong accent check mark — a Monday-themed referral call-to-action.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SKILLS ============ -->
+  <section id="skills" class="section skills">
+    <div class="container">
+      <div class="section-head reveal">
+        <p class="eyebrow">03 — Skills</p>
+        <h2 class="section-title">Skills</h2>
+        <div class="divider"></div>
+        <p class="section-subtitle">A multidisciplinary toolkit engineered for the modern digital landscape — bridging Technical Architecture with Creative Visualization. From architecting robust backend logic in Java and SQL to crafting immersive, spatial narratives in Blender, my skill set is defined by the pursuit of functional elegance and system integrity.</p>
+      </div>
+
+      <div class="pillar-row reveal">
+        <div class="pillar-big glass">
+          <span class="num">3D</span>
+          <h3>Spatial Visualization</h3>
+          <p>Adding dimension to digital storytelling through high-fidelity hard-surface modeling and atmospheric environment design.</p>
+        </div>
+        <div class="pillar-big glass">
+          <span class="num">UI</span>
+          <h3>Creative Realization</h3>
+          <p>Defining the visual soul of the product with pixel-perfect UI/UX prototyping and specialized graphic manipulation.</p>
+        </div>
+      </div>
+
+      <div class="skills-grid">
+        <div class="skill-card glass reveal">
+          <div class="skill-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="9" r="4"/><path d="M9 17a3 3 0 016 0M12 13v8M9 21h6"/></svg>
+          </div>
+          <h3>Technical Proficiency</h3>
+          <p>My foundation is built on modern web standards and logical architecture — clean, maintainable code that serves as the backbone for creative digital solutions.</p>
+          <div class="skill-bars">
+            <div class="bar"><span class="bar-label">HTML5 & CSS</span><span class="bar-track"><span class="bar-fill" data-fill="90"></span></span></div>
+            <div class="bar"><span class="bar-label">JavaScript</span><span class="bar-track"><span class="bar-fill" data-fill="80"></span></span></div>
+            <div class="bar"><span class="bar-label">Responsive Web Design</span><span class="bar-track"><span class="bar-fill" data-fill="85"></span></span></div>
+            <div class="bar"><span class="bar-label">Database Management (SQL)</span><span class="bar-track"><span class="bar-fill" data-fill="75"></span></span></div>
+          </div>
+        </div>
+
+        <div class="skill-card glass reveal">
+          <div class="skill-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="7"/><path d="m21 21-5-5"/><path d="M11 8v6M8 11h6"/></svg>
+          </div>
+          <h3>Visual & UI Strategy</h3>
+          <p>Industry-leading design tools to bridge the gap between imagination and interface — visual hierarchy, accessibility, and pixel-perfect prototyping.</p>
+          <div class="skill-bars">
+            <div class="bar"><span class="bar-label">Canva Pro (High-fidelity Layouts)</span><span class="bar-track"><span class="bar-fill" data-fill="95"></span></span></div>
+            <div class="bar"><span class="bar-label">Figma (UI/UX Prototyping)</span><span class="bar-track"><span class="bar-fill" data-fill="80"></span></span></div>
+            <div class="bar"><span class="bar-label">Visual Branding & Typography</span><span class="bar-track"><span class="bar-fill" data-fill="85"></span></span></div>
+            <div class="bar"><span class="bar-label">Wireframing & User Flows</span><span class="bar-track"><span class="bar-fill" data-fill="82"></span></span></div>
+          </div>
+        </div>
+
+        <div class="skill-card glass reveal">
+          <div class="skill-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2 4 7v10l8 5 8-5V7z"/><path d="M12 22V12M4 7l8 5 8-5"/></svg>
+          </div>
+          <h3>3D Visualization</h3>
+          <p>Pushing the boundaries of flat design by incorporating three-dimensional elements — depth, realism, and immersive storytelling.</p>
+          <div class="skill-bars">
+            <div class="bar"><span class="bar-label">Blender (Modeling & Rendering)</span><span class="bar-track"><span class="bar-fill" data-fill="78"></span></span></div>
+            <div class="bar"><span class="bar-label">3D Asset Creation</span><span class="bar-track"><span class="bar-fill" data-fill="72"></span></span></div>
+            <div class="bar"><span class="bar-label">Texture & Lighting Design</span><span class="bar-track"><span class="bar-fill" data-fill="70"></span></span></div>
+            <div class="bar"><span class="bar-label">Spatial Composition</span><span class="bar-track"><span class="bar-fill" data-fill="75"></span></span></div>
+          </div>
+        </div>
+
+        <div class="skill-card glass reveal">
+          <div class="skill-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
+          </div>
+          <h3>Soft Skills</h3>
+          <p>The human side of digital craft — collaboration, communication, and the discipline to ship work that matters.</p>
+          <div class="chips">
+            <span class="chip">Creative Communication</span>
+            <span class="chip">Collaborative Synergy</span>
+            <span class="chip">Critical Problem Solving</span>
+            <span class="chip">Professional Integrity</span>
+            <span class="chip">Adaptability</span>
+            <span class="chip">Attention to Detail</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CONTACT ============ -->
+  <section id="contact" class="section contact">
+    <div class="container contact-grid">
+      <div class="contact-left reveal">
+        <p class="eyebrow">04 — Contact</p>
+        <h2 class="section-title">Let's Connect.</h2>
+        <p class="contact-tag">Building the future together.</p>
+        <div class="divider"></div>
+        <p class="contact-desc">I am always looking for opportunities to blend Functional Logic with High-Fidelity Design. Reach out to discuss collaboration or innovative digital solutions.</p>
+
+        <div class="contact-list">
+          <a href="mailto:cuencacherrielou@gmail.com" class="contact-row glass">
+            <span class="contact-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+            </span>
+            <span class="contact-text">
+              <span class="contact-label">Email</span>
+              <span>cuencacherrielou@gmail.com</span>
+            </span>
+          </a>
+          <a href="#" class="contact-row glass">
+            <span class="contact-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            </span>
+            <span class="contact-text">
+              <span class="contact-label">Location</span>
+              <span>Lipa City, Batangas</span>
+            </span>
+          </a>
+          <a href="https://linkedin.com/in/cherriecuenca" target="_blank" rel="noopener" class="contact-row glass">
+            <span class="contact-icon">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14zM8.34 18.34v-7.69H5.67v7.69h2.67zM7 9.43a1.55 1.55 0 1 0 0-3.1 1.55 1.55 0 0 0 0 3.1zm11.34 8.91v-4.21c0-2.26-1.21-3.31-2.82-3.31a2.43 2.43 0 0 0-2.21 1.21v-1.04h-2.67c.04.75 0 7.69 0 7.69h2.67v-4.3a1.83 1.83 0 0 1 .09-.65 1.46 1.46 0 0 1 1.37-.97c.97 0 1.36.73 1.36 1.81v4.11h2.67z"/></svg>
+            </span>
+            <span class="contact-text">
+              <span class="contact-label">LinkedIn</span>
+              <span>/in/cherriecuenca</span>
+            </span>
+          </a>
+          <a href="https://github.com/cuencacherrielou-crypto" target="_blank" rel="noopener" class="contact-row glass">
+            <span class="contact-icon">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5a12 12 0 0 0-3.79 23.4c.6.11.82-.26.82-.58v-2c-3.34.72-4-1.6-4-1.6a3.14 3.14 0 0 0-1.33-1.75c-1.08-.74.08-.72.08-.72a2.49 2.49 0 0 1 1.82 1.22 2.53 2.53 0 0 0 3.46 1 2.53 2.53 0 0 1 .76-1.59c-2.67-.3-5.47-1.33-5.47-5.93a4.65 4.65 0 0 1 1.24-3.22 4.32 4.32 0 0 1 .12-3.18s1-.32 3.3 1.23a11.4 11.4 0 0 1 6 0c2.3-1.55 3.3-1.23 3.3-1.23a4.32 4.32 0 0 1 .12 3.18 4.65 4.65 0 0 1 1.24 3.22c0 4.62-2.8 5.63-5.48 5.92a2.83 2.83 0 0 1 .81 2.2v3.25c0 .32.22.7.83.58A12 12 0 0 0 12 .5z"/></svg>
+            </span>
+            <span class="contact-text">
+              <span class="contact-label">GitHub</span>
+              <span>/cuencacherrielou-crypto</span>
+            </span>
+          </a>
+        </div>
+      </div>
+
+      <div class="contact-right reveal">
+        <form class="contact-form glass" id="contactForm" novalidate>
+          <h3>Send a message</h3>
+          <div class="field">
+            <label for="cf-name">Your name</label>
+            <input id="cf-name" type="text" name="name" required />
+            <span class="field-error" data-for="cf-name"></span>
+          </div>
+          <div class="field">
+            <label for="cf-email">Email</label>
+            <input id="cf-email" type="email" name="email" required />
+            <span class="field-error" data-for="cf-email"></span>
+          </div>
+          <div class="field">
+            <label for="cf-msg">Message</label>
+            <textarea id="cf-msg" name="message" rows="4" required></textarea>
+            <span class="field-error" data-for="cf-msg"></span>
+          </div>
+          <button type="submit" class="btn btn-primary btn-full">
+            <span>Send Message</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <p class="form-success" id="formSuccess">Thanks! Your message has been queued. (Demo — wire up your backend or a service like Formspree.)</p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <p>© <span id="year"></span> Cherrie Lou Cuenca. Crafted with care · Functional Logic + Immersive Design.</p>
+      <p class="footer-meta">Built with HTML, CSS & JavaScript</p>
+    </div>
+  </footer>
+
+  <!-- Back to top -->
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+  </button>
+
+  <script src="script.js"></script>
+</body>
+</html>
